@@ -6,6 +6,8 @@ on:
       - 'packages/backend/**'
     branches:
       - develop
+    types:
+      - synchronize
 
 jobs:
   backend-run:
