@@ -1,13 +1,16 @@
 name: CI-Frontend
 
 on:
+  push:
+    paths:
+      - 'packages/frontend/**'
+    branches:
+      - develop
   pull_request:
     paths:
       - 'packages/frontend/**'
     branches:
       - develop
-    types:
-      - synchronize
 
 jobs:
   frontend-run:

@@ -1,13 +1,16 @@
 name: CI-Backend
 
 on:
+  push:
+    paths:
+      - 'packages/backend/**'
+    branches:
+      - develop
   pull_request:
     paths:
       - 'packages/backend/**'
     branches:
       - develop
-    types:
-      - synchronize
 
 jobs:
   backend-run:
