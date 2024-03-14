@@ -10,6 +10,8 @@ jobs:
       backend_changed: ${{ steps.set-outputs.outputs.backend_changed }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - id: set-outputs
         run: |
           echo "frontend_changed=false" >> $GITHUB_ENV
