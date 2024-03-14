@@ -6,6 +6,8 @@ on:
       - 'packages/frontend/**'
     branches:
       - develop
+    types:
+      - synchronize
 
 jobs:
   frontend-run:
