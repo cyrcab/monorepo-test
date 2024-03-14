@@ -27,6 +27,9 @@ jobs:
 
   build-frontend:
     needs: detect-changes
+    env:
+      FRONTEND_CHANGED: ${{ needs.detect-changes.outputs.frontend_changed }}
+      run: echo $FRONTEND_CHANGED
     if: needs.detect-changes.outputs.frontend_changed == 'true'
     runs-on: ubuntu-latest
     steps:
@@ -38,6 +41,9 @@ jobs:
 
   build-backend:
     needs: detect-changes
+    env:
+      BACKEND_CHANGED: ${{ needs.detect-changes.outputs.backend_changed }}
+      run: echo $BACKEND_CHANGED
     if: needs.detect-changes.outputs.backend_changed == 'true'
     runs-on: ubuntu-latest
     steps:
