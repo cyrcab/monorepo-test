@@ -14,10 +14,10 @@ jobs:
         run: |
           echo "frontend_changed=false" >> $GITHUB_ENV
           echo "backend_changed=false" >> $GITHUB_ENV
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'packages/frontend'; then
+          if git diff --name-only ${{ github.event.before }} ${{ github.event.head }} | grep -q 'packages/frontend'; then
             echo "frontend_changed=true" >> $GITHUB_ENV
           fi
-          if git diff --name-only ${{ github.event.before }} ${{ github.sha }} | grep -q 'packages/backend'; then
+          if git diff --name-only ${{ github.event.before }} ${{ github.event.head }} | grep -q 'packages/backend'; then
             echo "backend_changed=true" >> $GITHUB_ENV
           fi
           echo "::set-output name=frontend_changed::$frontend_changed"
