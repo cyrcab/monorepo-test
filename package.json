@@ -11,6 +11,8 @@
     ]
   },
   "scripts": {
-    
+    "test": "yarn workspaces run test",
+    "test:frontend": "yarn workspace frontend test",
+    "test:backend": "yarn workspace backend test"
   }
 }
